@@ -1,4 +1,4 @@
-#Purpose and Requirements#
+# Purpose and Requirements #
 Create a banking program that allows deposits, withdrawals, and is able to print a bank statement to the terminal
 
 Requirements:
@@ -7,14 +7,14 @@ Requirements:
 * Bank statement (date, amount (credit or debit), balance) printing
 * Data can be kept in memory
 
-##How to run and install##
+## How to run and install ##
 In your terminal, input:
 * "$ rspec --init" this creates a spec and spec_helper file
 * "$ bundle init" this creates a gemfile
 * Add rspec, rubocop, and simplecov gems to Gemfile
 * "$ bundle install" to install the necessary gems
 
-##How to run the tests##
+## How to run the tests ##
 To run the test in irb, input "$ irb" in your terminal
 To run RSpec, input "$ rspec" in your terminal
 

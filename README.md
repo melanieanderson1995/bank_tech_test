@@ -7,6 +7,15 @@ Requirements:
 * Bank statement (date, amount (credit or debit), balance) printing
 * Data can be kept in memory
 
+![Alt text](/public/bank_tech_test.jpg?raw=true "Screenshot")
+
+## Approach ##
+* Set up and overall process: Read over requirements -> wrote user stories -> initialized files -> began programming -> updated README.md -> finished programming -> updated README.md
+* Programming: TDD'd using feature tests in irb primarily -> writing basic unit tests -> writing Ruby code -> updating unit tests with periodic feature testing
+
+## Structure ##
+Followed recommended naming conventions, names are clear, concise, and descriptive. Similar methods are grouped together for readability, as are similar tests. Private methods are not tested for, all other methods are tested for.
+
 ## How to run and install ##
 In your terminal, input:
 * "$ rspec --init" this creates a spec and spec_helper file
@@ -40,4 +49,9 @@ so that I can keep track of my money,
 I want to be able to print a statement with the date, amount, and bank account balance
 
 As a user,
-so that I can understand my statement, I want the statement to have a header so I know which section is which
+so that I can understand my statement,
+I want the statement to have a header so I know which section is which
+
+As a user,
+So I can see my most recent transaction easily,
+I want the statement to show the most recent transaction first

@@ -19,16 +19,6 @@ class Bank
     @date = "#{day}/#{month}/#{year}"
   end
 
-  def record_deposit
-    transaction = [@date, amount, nil, balance]
-    @history.push(transaction)
-  end
-
-  def record_withdraw
-    transaction = [@date, nil, amount, balance]
-    @history.push(transaction)
-  end
-
   def deposit(amount)
     @amount = amount
     @balance += amount
@@ -53,7 +43,8 @@ class Bank
   end
 
   def create_statement
-    history.each do |amount|
+    history_reverse = @history.reverse()
+    history_reverse.each do |amount|
       puts "#{amount[0]} || #{amount[1]} || #{amount[2]} || #{amount[3]}"
     end
   end
@@ -63,4 +54,17 @@ class Bank
     puts header
     header
   end
+
+  private
+
+  def record_deposit
+    transaction = [@date, amount, nil, balance]
+    @history.push(transaction)
+  end
+
+  def record_withdraw
+    transaction = [@date, nil, amount, balance]
+    @history.push(transaction)
+  end
+
 end

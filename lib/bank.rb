@@ -44,8 +44,8 @@ class Bank
 
   def create_statement
     history_reverse = @history.reverse()
-    history_reverse.each do |amount|
-      puts "#{amount[0]} || #{amount[1]} || #{amount[2]} || #{amount[3]}"
+    history_reverse.each do |transaction|
+      puts "#{transaction[0]} || #{transaction[1]} || #{transaction[2]} || #{transaction[3]}"
     end
   end
 

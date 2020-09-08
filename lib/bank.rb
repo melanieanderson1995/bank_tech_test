@@ -1,33 +1,33 @@
 class Bank
-  attr_reader :balance, :history
+  attr_reader :balance, :history, :date
 
   def initialize(balance = 0)
     @balance = balance
     @history = []
+    @date = ""
   end
 
-  def deposit(amount)
-    @balance += amount
-    balance = @balance
+  def date_of_transaction
     time = Time.new
     year = time.year
     month = time.month
     day = time.day
-    transaction = ["#{day}/#{month}/#{year}", amount, balance]
+    @date = "#{day}/#{month}/#{year}"
+  end
+
+  def deposit(amount)
+    @balance += amount
+    date_of_transaction
+    transaction = [@date, amount, nil, @balance]
     @history.push(transaction)
     balance
   end
 
   def withdraw(amount)
     fail "Balance of £#{@balance} is insufficient" if (@balance < amount)
-    #fail "Balance cannot exceed £#{UPPER_LIMIT}" if (@balance += amount) > UPPER_LIMIT
     @balance -= amount
-    balance = @balance
-    time = Time.new
-    year = time.year
-    month = time.month
-    day = time.day
-    transaction = ["#{day}/#{month}/#{year}", amount, balance]
+    date_of_transaction
+    transaction = [@date, nil, amount, @balance]
     @history.push(transaction)
     balance
   end
@@ -39,12 +39,12 @@ class Bank
 
   def create_statement
     history.each do |amount|
-      puts "#{amount[0]}" + " || " + "#{amount[1]}" + " || " + "#{amount[2]}"
+      puts "#{amount[0]} || #{amount[1]} || #{amount[2]} || #{amount[3]}"
     end
   end
 
   def print_header
-    header = "date || amount || balance"
+    header = "date || credit || debit || balance"
     puts header
     header
   end

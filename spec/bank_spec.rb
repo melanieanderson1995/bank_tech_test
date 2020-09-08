@@ -33,12 +33,12 @@ describe Bank do
     it "saves amount of withdrawal in history" do
       subject.deposit(20)
       subject.withdraw(5)
-      expect(subject.history[1][1]).to eq 5
+      expect(subject.history[1][2]).to eq 5
     end
   end
 
   it "prints the header" do
-    expect(subject.print_header).to eq "date || amount || balance"
+    expect(subject.print_header).to eq "date || credit || debit || balance"
   end
 
   describe "#print statement" do

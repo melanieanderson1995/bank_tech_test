@@ -2,12 +2,13 @@
 
 # Class creates bank account and functions
 class Bank
-  attr_reader :balance, :history, :date
+  attr_reader :balance, :history, :date, :amount
 
   def initialize(balance = 0)
     @balance = balance
     @history = []
     @date = ''
+    @amount = amount
   end
 
   def date_of_transaction
@@ -18,21 +19,31 @@ class Bank
     @date = "#{day}/#{month}/#{year}"
   end
 
+  def record_deposit
+    transaction = [@date, amount, nil, balance]
+    @history.push(transaction)
+  end
+
+  def record_withdraw
+    transaction = [@date, nil, amount, balance]
+    @history.push(transaction)
+  end
+
   def deposit(amount)
+    @amount = amount
     @balance += amount
     date_of_transaction
-    transaction = [@date, amount, nil, @balance]
-    @history.push(transaction)
+    record_deposit
     balance
   end
 
   def withdraw(amount)
     raise "Balance of £#{@balance} is insufficient" if @balance < amount
 
+    @amount = amount
     @balance -= amount
     date_of_transaction
-    transaction = [@date, nil, amount, @balance]
-    @history.push(transaction)
+    record_withdraw
     balance
   end
 

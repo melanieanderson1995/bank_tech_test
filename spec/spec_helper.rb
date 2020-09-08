@@ -14,7 +14,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-require "simplecov"
+# frozen_string_literal: true
+
+require 'simplecov'
 SimpleCov.start
 
 RSpec.configure do |config|

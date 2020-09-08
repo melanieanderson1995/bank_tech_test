@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/melanieanderson/Documents/Projects/bank_tech_test/spec/bank_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -63,12 +65,14 @@
           1,
           null,
           null,
-          null,
           null
         ]
       },
       "/Users/melanieanderson/Documents/Projects/bank_tech_test/lib/bank.rb": {
         "lines": [
+          null,
+          null,
+          null,
           1,
           1,
           null,
@@ -96,6 +100,7 @@
           null,
           1,
           4,
+          null,
           3,
           3,
           3,
@@ -123,6 +128,6 @@
         ]
       }
     },
-    "timestamp": 1599556804
+    "timestamp": 1599557536
   }
 }

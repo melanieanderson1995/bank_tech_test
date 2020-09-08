@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
+# Class creates bank account and functions
 class Bank
   attr_reader :balance, :history, :date
 
   def initialize(balance = 0)
     @balance = balance
     @history = []
-    @date = ""
+    @date = ''
   end
 
   def date_of_transaction
@@ -24,7 +27,8 @@ class Bank
   end
 
   def withdraw(amount)
-    fail "Balance of £#{@balance} is insufficient" if (@balance < amount)
+    raise "Balance of £#{@balance} is insufficient" if @balance < amount
+
     @balance -= amount
     date_of_transaction
     transaction = [@date, nil, amount, @balance]
@@ -44,7 +48,7 @@ class Bank
   end
 
   def print_header
-    header = "date || credit || debit || balance"
+    header = 'date || credit || debit || balance'
     puts header
     header
   end
